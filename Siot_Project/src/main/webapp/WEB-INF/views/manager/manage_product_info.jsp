@@ -5,7 +5,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="../css/layout.css">
-<%@ include file="/WEB-INF/views/include/manage_header.jsp" %>
+<%@ include file="/WEB-INF/views/include/manage_header.jsp"%>
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -131,6 +131,9 @@
 .parent {
 	width: 90%;
 	margin: 10px auto;
+	display:flex;
+	justify-content: space-between;
+	
 }
 
 .buyrightnowButton {
@@ -140,7 +143,7 @@
 	cursor: pointer;
 	color: #ffffff;
 	font-family: Arial;
-	float: left;
+	display:block;
 	width: 140px;
 	height: 45px;
 	font-size: 15px;
@@ -150,8 +153,7 @@
 
 .buycartButton {
 	border: 1px solid #4f4f4f;
-	float: left;
-	margin-left: 5%;
+	display: inline-block;	
 	width: 140px;
 	height: 45px;
 	box-sizing: border-box;
@@ -162,7 +164,7 @@
 
 .buywishlistButton {
 	border: 1px solid #4f4f4f;
-	float: right;
+	display: inline-block;	
 	width: 140px;
 	height: 45px;
 	box-sizing: border-box;
@@ -218,29 +220,39 @@
 }
 
 #origin1 {
- float:left; margin-right:10px; clear:both;}
+	float: left;
+	margin-right: 10px;
+	clear: both;
+}
 
 #origin2 {
-margin-left:70px;}
+	margin-left: 70px;
+}
 
 #buyeffort1 {
- float:left; margin-right:10px; clear:both;}
+	float: left;
+	margin-right: 10px;
+	clear: both;
+}
 
 #buyeffort2 {
-margin-left:70px;}
+	margin-left: 70px;
+}
 
 #postprice1 {
- float:left; margin-right:10px; clear:both;}
+	float: left;
+	margin-right: 10px;
+	clear: both;
+}
 
 #postprice2 {
-margin-left:70px;}
+	margin-left: 70px;
+}
 
 #all2 {
- margin-top:50px; margin-bottom:50px; }
-
-
-
-
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
 </style>
 </head>
 <body>
@@ -268,91 +280,88 @@ margin-left:70px;}
 
 
 			</div>
-		<div id="rightside">
-			<!-- 오른쪽 영역 -->
-			<div id="pdtwithprice">
-				
-				<!-- 상품명 -->
-				<div id="productname">
-					<span>${productBean.name}</span>
+			<div id="rightside">
+				<!-- 오른쪽 영역 -->
+				<div id="pdtwithprice">
+
+					<!-- 상품명 -->
+					<div id="productname">
+						<span>${productBean.name}</span>
+					</div>
+
+					<!-- 상품가격 -->
+					<div id="productprice">
+						<span>${productBean.price}</span>
+					</div>
 				</div>
-				
-				<!-- 상품가격 -->
-				<div id="productprice">
-					<span>${productBean.price}</span>
+
+
+				<div>
+					<div id="pdtdetail">
+						<!-- 상품 상세정보 -->
+						<span>${productBean.contents}</span>
+					</div>
+
+
 				</div>
-			</div>
-			
-			
-			<div>
-				<div id="pdtdetail">
-					<!-- 상품 상세정보 -->
-					<span>${productBean.contents}</span>
+
+
+				<div id="all2">
+					<div>
+						<div id="origin1">
+							<!-- 원산지 1 (title) -->
+							<p>원산지</p>
+						</div>
+
+						<div id="origin2">
+							<!-- 원산지 2 (substance) -->
+							<p>Korea</p>
+						</div>
+					</div>
+
+					<div>
+						<div id="buyeffort1">
+							<!-- 구매혜택 1 (title) -->
+							<p>구매혜택</p>
+						</div>
+
+						<div id="buyeffort2">
+							<!-- 구매혜택 2 (substance) -->
+							<p>1,780 구매감사적립금 적립예정</p>
+						</div>
+					</div>
+
+					<div>
+						<div id="postprice1">
+							<!-- 택배비용 1 (title)-->
+							<p>배송비</p>
+						</div>
+
+						<div id="postprice2">
+							<!-- 택배비용 2 (substance)-->
+							<p>4,000원 (250,000원 이상 무료배송)</p>
+						</div>
+					</div>
 				</div>
-				
-				<div id="pdtsuperdetail">
-					<!-- 상품 2차 상세정보 -->
-					<p>${productBean.d_contents}</p>
+
+				<div id="postmethodwhich">
+					<!-- 배송방법 -->
+					<select class="active" name="selectBox">
+						<option id="selectBox0">택배</option>
+						<option id="selectBox1">방문수령</option>
+					</select>
 				</div>
-			</div>
-		
-		
-		<div id="all2">	
-			<div>
-				<div id="origin1">
-				<!-- 원산지 1 (title) -->
-				<p>원산지</p>				
+
+
+				<div id="colorchoose">
+					<!-- 색상 -->
 				</div>
-				
-				<div id="origin2">
-				<!-- 원산지 2 (substance) -->
-				<p>Korea</p>
+				<div id="addwidth">
+					<!-- 폭추가 -->
 				</div>
-			</div>
-			
-			<div>
-				<div id="buyeffort1">
-				<!-- 구매혜택 1 (title) -->
-				<p>구매혜택</p>
+				<div id="addheight">
+					<!-- 기장추가 -->
 				</div>
-				
-				<div id="buyeffort2">
-				<!-- 구매혜택 2 (substance) -->
-				<p>1,780 구매감사적립금 적립예정</p>
-				</div>
-			</div>
-			
-			<div>
-				<div id="postprice1">
-				<!-- 택배비용 1 (title)-->
-				<p>배송비</p>
-				</div>
-				
-				<div id="postprice2">
-				<!-- 택배비용 2 (substance)-->
-				<p>4,000원 (250,000원 이상 무료배송)</p>
-				</div>
-			</div>	
-		</div>
-		
-			<div id="postmethodwhich">
-				<!-- 배송방법 -->
-				<select class="active" name="selectBox">
-					<option id="selectBox0">택배</option>
-					<option id="selectBox1">방문수령</option>
-				</select>
-			</div>
-			
-			
-			<div id="colorchoose">
-				<!-- 색상 -->
-			</div>
-			<div id="addwidth">
-				<!-- 폭추가 -->
-			</div>
-			<div id="addheight">
-				<!-- 기장추가 -->
-			</div>
 
 				<div class="parent">
 					<!-- 부모요소 -->
@@ -380,24 +389,26 @@ margin-left:70px;}
 
 				</div>
 
-		<div>
 				<div>
+					<div>
 
-					<a href="ProductDelete.do?no=${productBean.no} "
-						onclick="if(!confirm('삭제하시면 복구할수 없습니다. \n 정말로 삭제하시겠습니까??')){return false;}"
-						id="deleteButton"> 삭제 </a> <a
-						href="ProductUpdateForm.do?no=${productBean.no}"
-						id="fixButton"> 수정 </a>
+						<a href="ProductDelete.do?no=${productBean.no} "
+							onclick="if(!confirm('삭제하시면 복구할수 없습니다. \n 정말로 삭제하시겠습니까??')){return false;}"
+							id="deleteButton"> 삭제 </a> <a
+							href="ProductUpdateForm.do?no=${productBean.no}" id="fixButton">
+							수정 </a>
 
 
+					</div>
 				</div>
+
 			</div>
 		</div>
-	</div>
 
-<%@ include file="/WEB-INF/views/reviewbox/review_list.jsp"%>
-<%@ include file="/WEB-INF/views/reviewbox/review_qna.jsp"%>
-<%@ include file="../include/footer.jsp"%>
+		<%@ include file="/WEB-INF/views/manager/manage_product_detail.jsp"%>
+		<%@ include file="/WEB-INF/views/reviewbox/review_list.jsp"%>
+		<%@ include file="/WEB-INF/views/reviewbox/review_qna.jsp"%>
+		<%@ include file="../include/footer.jsp"%>
 
 	</section>
 

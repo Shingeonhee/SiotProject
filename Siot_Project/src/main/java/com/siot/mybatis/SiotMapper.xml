@@ -22,22 +22,22 @@
 
 	<select id="getWeddingList" resultType="ProductBean">
 		SELECT * FROM PRODUCT
-		WHERE CATEGORY = 'Wedding'
+		WHERE CATEGORY = 'Wedding' ORDER BY NO DESC
 	</select>
 
 	<select id="getDailyList" resultType="ProductBean">
 		SELECT * FROM PRODUCT WHERE
-		CATEGORY = 'Daily'
+		CATEGORY = 'Daily' ORDER BY NO DESC
 	</select>
 
 	<select id="getUniqueList" resultType="ProductBean">
 		SELECT * FROM PRODUCT
-		WHERE CATEGORY = 'Unique'
+		WHERE CATEGORY = 'Unique' ORDER BY NO DESC
 	</select>
 
 	<select id="getGoodbyeitemList" resultType="ProductBean">
 		SELECT * FROM PRODUCT
-		WHERE CATEGORY = 'Goodbyeitem'
+		WHERE CATEGORY = 'Goodbyeitem' ORDER BY NO DESC
 	</select>
 
 	<select id="allProductList" resultType="ProductBean">
