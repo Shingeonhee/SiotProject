@@ -41,7 +41,7 @@
 	</select>
 
 	<select id="allProductList" resultType="ProductBean">
-		SELECT * FROM PRODUCT
+		SELECT * FROM PRODUCT ORDER BY NO DESC
 	</select>
 
 	<select id="productInfo" parameterType="Integer"

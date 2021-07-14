@@ -186,7 +186,7 @@ public class ProductController {
 
 		int result = productDao.insertProduct(productBean);
 		if (result > 0) {
-			ScriptWriterUtil.alertAndNext(response, "등록되었습니다.", "/");
+			ScriptWriterUtil.alertAndNext(response, "등록되었습니다.", "ProductManage.do");
 			return null;
 		} else {
 			ScriptWriterUtil.alertAndBack(response, "등록실패.");
@@ -202,7 +202,7 @@ public class ProductController {
 
 		// String a = ScriptWriterUtil.confirmAndNext(response,"삭제?");
 		if (result > 0) {
-			ScriptWriterUtil.alertAndNext(response, "상품이 삭제되었습니다.", "ProductList.do");
+			ScriptWriterUtil.alertAndNext(response, "상품이 삭제되었습니다.", "ProductManage.do");
 			return null;
 		} else {
 			ScriptWriterUtil.alertAndBack(response, "상품이 삭제되지 않았습니다.");
@@ -242,7 +242,7 @@ public class ProductController {
 		productBean.setMainimg(dbSavedFile);
 		int result = productDao.productUpdate(productBean);
 		if (result > 0) {
-			ScriptWriterUtil.alertAndNext(response, "상품수정.", "ProductList.do");
+			ScriptWriterUtil.alertAndNext(response, "상품수정.", "ProductManage.do");
 			return null;
 		} else {
 			ScriptWriterUtil.alertAndBack(response, "상품수정x.");

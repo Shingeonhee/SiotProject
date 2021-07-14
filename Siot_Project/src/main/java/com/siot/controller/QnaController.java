@@ -457,12 +457,16 @@ public class QnaController {
 		}
 	}
 
-	@GetMapping("/ProductQnaDelete.do")
-	public int pdtQnaDelete(int no, HttpServletResponse response) throws IOException {
-//		System.out.println("no==="+no);
+	@RequestMapping("/ProductQnaDelete.do")
+	public String pdtQnaDelete(int no, HttpServletResponse response,int pdtNo) throws IOException {
+		System.out.println("no==="+no);
 		int result = productQnaDao.deletePdtQna(no);
-
-		return result;
+		if (result > 0) {
+			ScriptWriterUtil.alertAndNext(response, "글이 삭제되었습니다", "ProductInfo.do?no=" + pdtNo);
+		} else {
+			ScriptWriterUtil.alertAndBack(response, "글이 삭제되지 않았습니다");
+		}
+		return null;
 	}
 
 	@GetMapping("/VPdtQnaDelete.do")

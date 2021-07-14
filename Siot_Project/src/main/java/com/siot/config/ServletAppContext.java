@@ -32,6 +32,7 @@ public class ServletAppContext implements WebMvcConfigurer {
 		registry.addResourceHandler("/productImage/**").addResourceLocations("file:///C:/pdt_image/");
 		registry.addResourceHandler("/summernoteImg/**").addResourceLocations("file:///C:/summernote/");
 		registry.addResourceHandler("/summernoteImg2/**").addResourceLocations("file:///C:/summernote2/");
+		registry.addResourceHandler("/miniProject/**").addResourceLocations("file:///C:/miniproject_image/");
 		
 	}
 	

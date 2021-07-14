@@ -399,7 +399,7 @@ $.ajax({
 		         		const _no =  _parent.data("idx");
 		         		const qnaNo =  _parent.data("no");
 	       				$.ajax({
-	       					url:"VPdtQnaReplyDelete.do?no="+_no,
+	       					url:"VPdtQnaReplyDelete.do?no="+qnaNo,
 	       					data:{
 	       						"no":_no,
 	       						"qnaNo":qnaNo
@@ -540,7 +540,7 @@ $.ajax({
 		       		  }else{
 		       			 $('#pdtQnaDeleteModal').show();
 		       			 $(".pdtqna-delete-modal-content").append(`
-		       					 <form method="POST" action="PdtQnaDelete.do" >
+		       					 <form method="POST" action="ProductQnaDelete.do" >
 			       					<div class="closePdtDeleteModal" style="float:right;">
 					     		  	 	<span class="material-icons">
 					    					close
