@@ -1,0 +1,571 @@
+@font-face {
+  font-family: 'Chosunilbo_myungjo';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+input {
+  font-family: 'Chosunilbo_myungjo', 'Alegreya', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', 'Noto Sans', 'sans-serif';
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Chosunilbo_myungjo', 'Alegreya', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', 'Noto Sans', 'sans-serif';
+}
+
+.formBox {
+  position: relative;
+  background-color: #f5f6f7;
+  width: 1900px;
+  height: 800px;
+}
+
+.formBox h2 {
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 1.2;
+  font-style: normal;
+  padding: 40px;
+  margin-left: 280px;
+}
+
+#join {
+  cursor: pointer;
+}
+
+#jointext {
+  text-align: center;
+}
+
+#joincheck {
+  margin-left: 300px;
+  padding: 20px;
+}
+
+textarea {
+  width: 1250px;
+  height: 200px;
+  overflow-y: scroll;
+  border: none;
+  outline: none;
+  border-color: #f5f6f8;
+  resize: none;
+}
+
+#myPage {
+  background-color: #f5f6f7;
+}
+
+#myPage .myPage {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#myPage .myPage .myBox .boxMargin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#myPage .myPage .myBox .myPageList {
+  width: 16.66666667%;
+  text-align: left;
+  margin: 0;
+}
+
+#myPage .myPage .myBox .myPageList ul {
+  margin-top: 100px;
+}
+
+#myPage .myPage .myBox .myPageList li {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+#myPage .myPage .myBox #rightbody {
+  width: 83.33333333%;
+}
+
+#myPage .myPage .myBox #rightbody .subbody {
+  width: 90%;
+  padding: 50px 0 50px 45px;
+  margin-bottom: 70px;
+  background: #fff;
+  margin-top: 100px;
+  display: table;
+}
+
+#myPage .myPage .myBox #rightbody .subbody .fullbody {
+  width: 100% !important;
+}
+
+#myPage .myPage .myBox #rightbody .subbody img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+#myPage .myPage .myBox #rightbody .leftSub {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#myPage .myPage .myBox #rightbody .leftContents {
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: 50px;
+  width: 40%;
+}
+
+#myPage .myPage .myBox #rightbody .leftContents span {
+  font-size: 22px;
+}
+
+#myPage .myPage .myBox #rightbody .leftContents p {
+  font-size: 15px;
+}
+
+#myPage .myPage .myBox #rightbody .rightSub {
+  width: 25%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#myPage .myPage .myBox #rightbody .rightSub a {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+#myPage .myPage .myBox #rightbody .rightSub p {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+#myPage .myPage .myBox .rightTxt {
+  min-height: 300px;
+}
+
+#myPage .myPage .myBox .rightTxt > p {
+  color: rgba(33, 33, 33, 0.4);
+  font-size: 15px;
+  padding: 70px 0 150px;
+  text-align: center;
+  font-size: 14px;
+}
+
+#myPage .qnaBox {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#myPage .qnaBox .empty {
+  width: 16.666666%;
+}
+
+#myPage .qnaBox .qna span {
+  padding-bottom: 20px;
+}
+
+#myPage .qnaBox .qna p {
+  padding-bottom: 10px;
+}
+
+#myPage .qnaBox .qnaWrap {
+  border-top: 1px solid #ccc;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+#myPage .qnaBox .qnaWrap .qnaWrite {
+  position: absolute;
+  right: 0;
+}
+
+#myPage .qnaBox .qnaWrap .qnaWrite a {
+  font-size: 12px;
+  padding: 6px 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #efefef;
+}
+
+#myPage .qnaBox .qnaWrap .qnaWrite a:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+.userjoin {
+  background-color: #f5f6f7;
+  width: 1900px;
+  height: 1020px;
+  display: block;
+}
+
+.userjoin h2 {
+  text-align: center;
+  padding: 40px;
+  font-size: 36px;
+}
+
+#login {
+  background-color: #f5f6f7;
+}
+
+#login #mainLogin {
+  max-width: 1210px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 50px;
+}
+
+#login #mainLogin .empty01 {
+  width: 33.33333333%;
+}
+
+#login #mainLogin .userlogin {
+  width: 33.33333333%;
+  position: relative;
+}
+
+#login #mainLogin .userlogin h2 {
+  text-align: center;
+  font-size: 2.571em;
+  line-height: 1.2;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+#login #mainLogin .userlogin input {
+  border: 1px solid #e0e0e0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 12px 16px;
+  width: 100%;
+  line-height: 1.2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#login #mainLogin .userlogin .checkBox {
+  padding: 20px 0;
+  font-size: 14px;
+  color: #4f4f4f;
+  position: relative;
+}
+
+#login #mainLogin .userlogin .checkBox #login-check {
+  position: absolute;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  outline: none;
+  margin: 0;
+}
+
+#login #mainLogin .userlogin .checkBox span {
+  padding-left: 30px;
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: text-top;
+}
+
+#login #mainLogin .userlogin .findBox {
+  padding: 20px 0;
+  font-size: 14px;
+  color: #4f4f4f;
+}
+
+#login #mainLogin .userlogin .findBox #find {
+  float: right;
+}
+
+#login #mainLogin .userlogin p {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#login #mainLogin #unuser {
+  color: #fff;
+  background-color: #8393A7;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#login .empty02 {
+  width: 33.33333333%;
+}
+
+#unuser_modal {
+  z-index: 99999;
+}
+
+#unuser_modal h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 0;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+#unuser_modal .blockBox {
+  width: 320px;
+}
+
+#unuser_modal .blockBox .inputBox {
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  border-radius: 3px 3px 0 0;
+}
+
+#unuser_modal .blockBox .inputBox input {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 12px 16px;
+  width: calc(100% - 32px);
+  line-height: 1.2;
+}
+
+#unuser_modal .blockBox .inputBox input:last-child {
+  border-top: 1px solid #e0e0e0;
+}
+
+#unuser_modal .blockBox .loginBtn {
+  margin: 10px 0;
+  color: #212121;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  height: 45px;
+  letter-spacing: normal;
+  line-height: 22.4px;
+}
+
+#unuser_modal .blockBox .loginBtn button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #4f4f4f;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-width: 1px;
+}
+
+#unuser_modal .blockBox .loginBtn button:hover {
+  background-color: #4f4f4f;
+  color: #fff;
+}
+
+#paymentList {
+  height: 100px;
+  display: table;
+  width: 90%;
+  background: #fff;
+  padding-right: 50px;
+}
+
+#paymentList .leftBox {
+  width: 35%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#paymentList .leftBox img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+  padding-right: 10px;
+}
+
+#paymentList .leftBox .txtBox {
+  font-size: 12px;
+  margin: auto 0;
+}
+
+#paymentList .leftBox .txtBox .pdtName {
+  font-size: 14px;
+  display: block;
+}
+
+#paymentList .leftBox .txtBox #colorBox {
+  display: inline-block;
+  margin: 0;
+}
+
+#paymentList .leftBox .txtBox span {
+  display: block;
+}
+
+#paymentList .middleBox {
+  width: 35%;
+  text-align: center;
+  line-height: 100px;
+}
+
+#paymentList .rightBox {
+  width: 40%;
+  text-align: right;
+  line-height: 100px;
+}
+
+#paymentList button {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 30px;
+}
+
+#orderChkBtn {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  background-color: #fff;
+  font-size: 12px;
+}
+
+#paymentInfo {
+  width: 94.3%;
+  line-height: 1.5;
+  color: #212121;
+  font-size: 14px;
+}
+
+#paymentInfo #underLine {
+  border-bottom: 1px solid #2121;
+  margin: 15px 0 30px;
+}
+
+#paymentInfo h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3px;
+}
+
+#paymentInfo h2 .arrowBack {
+  width: 18px;
+  height: 18px;
+}
+
+#paymentInfo h2 .paymentNoTitle {
+  margin-left: 18px;
+  font-size: 18px;
+}
+
+#paymentInfo h2 .paymentNoText {
+  margin-left: 10px;
+  color: #4f4f4f;
+  font-size: 18px;
+}
+
+#paymentInfo h3 {
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 30px;
+}
+
+#paymentInfo li > p {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+#paymentInfo li > span {
+  font-size: 14px;
+  color: #212121;
+  margin-bottom: 10px;
+}
+
+#paymentInfo li .allPrice {
+  font-size: 16px;
+  font-weight: 700;
+  color: #474747;
+}
+
+#paymentInfo #paymentInfoL {
+  float: left;
+  width: 45%;
+}
+
+#paymentInfo #paymentInfoL #paymentInfoL1 {
+  padding: 30px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+#paymentInfo #paymentInfoL #paymentInfoL2 {
+  padding: 30px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+#paymentInfo #paymentInfoR {
+  float: right;
+  width: 45%;
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+#paymentInfo #paymentInfoR > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#paymentInfo #paymentInfoR #imgBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 74px;
+  margin-bottom: 15px;
+}
+
+#paymentInfo #paymentInfoR #imgBox #pdtImg {
+  width: 58px;
+  height: 58px;
+}
+
+#paymentInfo #paymentInfoR #imgBox #imgTextBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 10px;
+  font-size: 13px;
+  color: #757575;
+}
+
+#paymentInfo #paymentInfoR #imgBox #imgTextBox .pdtName {
+  font-size: 14px;
+  color: #212121;
+  font-weight: 700;
+}

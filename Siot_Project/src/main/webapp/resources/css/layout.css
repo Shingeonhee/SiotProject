@@ -1,0 +1,1193 @@
+@font-face {
+  font-family: 'Chosunilbo_myungjo';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Chosunilbo_myungjo', 'Alegreya', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', 'Noto Sans', 'sans-serif';
+}
+
+input {
+  font-family: 'Chosunilbo_myungjo', 'Alegreya', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', 'Noto Sans', 'sans-serif';
+}
+
+button {
+  font-family: 'Chosunilbo_myungjo', 'Alegreya', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', 'Noto Sans', 'sans-serif';
+}
+
+#pageSize {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+#header {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  height: 203px;
+}
+
+#header #myImg {
+  height: 70px;
+  display: inline-block;
+  line-height: 35px;
+}
+
+#header #myImg .myImg {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+#header #logoBox {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header #logoBox #emptyBox {
+  min-width: 5px;
+  min-height: 5px;
+  height: 42px;
+}
+
+#header #logoBox #logo {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  -o-object-fit: none;
+     object-fit: none;
+}
+
+#header #logoBox #logoTxtBox {
+  height: 50px;
+}
+
+#header #logoBox #logoTxtBox #logoTxt {
+  color: #883131;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+#header #gnb {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: auto 0;
+  padding: 0 15px;
+}
+
+#header #gnb.fixed {
+  position: fixed;
+  top: 0%;
+  background-color: #fff;
+  color: #333;
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+}
+
+#header #gnb .emptyLeftBox {
+  width: 273px;
+  height: 70px;
+}
+
+#header #gnb .list {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+#header #gnb .list > li {
+  display: inline-block;
+  height: 70px;
+  line-height: 70px;
+  font-weight: 600;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+#header #gnb .utilMenu {
+  text-align: center;
+  display: inline-block;
+  width: 315px;
+}
+
+#header #gnb .utilMenu > a {
+  font-size: 13px;
+  display: inline-block;
+  height: 70px;
+  line-height: 70px;
+  font-weight: 300;
+  margin-right: 10px;
+}
+
+.qnaInfo {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.qnaInfo #infoContents {
+  text-align: left;
+  min-height: 200px;
+}
+
+.qnaInfo #infoContents span p img {
+  width: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#QnaWriteForm {
+  display: block;
+  padding-top: 90px;
+}
+
+#QnaWriteForm .writeHeader {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 111200;
+  padding: 17px 21px;
+}
+
+#QnaWriteForm .writeHeader .writerHeaderInner {
+  display: block;
+  margin: 0 auto;
+}
+
+#QnaWriteForm .writeHeader .writerHeaderInner span {
+  font-size: 20px;
+  float: left;
+  font-weight: 400;
+  color: #4a4a4a;
+}
+
+#QnaWriteForm .writeHeader .writerHeaderInner .writeBtn {
+  font-size: 12px;
+  float: right;
+}
+
+#QnaWriteForm .writeHeader .writerHeaderInner .writeBtn #cancel {
+  margin-right: 5px;
+  color: #4a4a4a;
+  background: none;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  padding: 6.5px 12px;
+}
+
+#QnaWriteForm .writeHeader .writerHeaderInner .writeBtn #write {
+  color: #fff;
+  background-color: #4a4a4a;
+  border: none;
+  border-radius: 5px;
+  padding: 6.5px 12px;
+}
+
+#QnaWriteForm .writeBox {
+  max-width: 1000px;
+  margin: 50px auto 30px;
+}
+
+#QnaWriteForm .writeBox #replyForm {
+  border: none;
+}
+
+#QnaWriteForm .writeBox #replyForm .textAreaBox {
+  border: none;
+  position: relative;
+}
+
+#QnaWriteForm .writeBox #replyForm .textAreaBox .btnReply {
+  position: absolute;
+  bottom: 45px;
+  position: absolute;
+  right: 10px;
+  border: 1px solid #ccc;
+  padding: 5px 15px;
+  font-size: 12px;
+}
+
+#QnaWriteForm .writeBox #replyForm .textAreaBox .btnReply:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+#QnaWriteForm .writeBox #replyForm #reply {
+  resize: none;
+  height: 100px;
+  outline: none;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 30px 0;
+}
+
+#QnaWriteForm .writeBox .boardSummary {
+  border-bottom: 0;
+  margin: 30px 0 0 0;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#QnaWriteForm .writeBox .boardSummary .left {
+  width: 100%;
+  max-width: 300px;
+  float: left;
+  position: relative;
+  z-index: 100;
+  padding-bottom: 20px;
+}
+
+#QnaWriteForm .writeBox .boardSummary .left #profileImg {
+  padding-right: 16px;
+}
+
+#QnaWriteForm .writeBox .boardSummary .left #profileImg .profileImg {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+#QnaWriteForm .writeBox .boardSummary .left #name {
+  height: 40px;
+  line-height: 40px;
+}
+
+#QnaWriteForm .writeBox .boardSummary .left > div {
+  display: inline-block;
+}
+
+#QnaWriteForm .writeBox .boardSummary .right {
+  float: right;
+}
+
+#QnaWriteForm .writeBox .editorBox {
+  width: 1000px;
+}
+
+#QnaWriteForm .writeBox .editorBox #subject {
+  margin-top: 15px;
+  width: 100%;
+  display: block;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 0;
+  padding: 8px 10px 30px 10px;
+  line-height: 1.2;
+  outline: none;
+}
+
+#QnaWriteForm .writeBox .editorBox #infoContents {
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+}
+
+#QnaWriteForm .writeBox .editorBox #infoContents img {
+  max-width: 300px;
+}
+
+#QnaWriteForm .writeBox .editorBox #infoContents p {
+  margin: 20px;
+}
+
+#QnaWriteForm .writeBox .editorBox .replyListBox {
+  margin: 30px 0;
+}
+
+#QnaWriteForm .writeBox .editorBox .note-editor {
+  padding-top: 20px;
+  outline: none;
+  border: none;
+}
+
+.editLink {
+  text-align: right;
+  font-size: 12px;
+}
+
+.editLink > a {
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 10px 20px;
+}
+
+.editLink > a:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+#manageBody {
+  width: 100%;
+}
+
+#manageBody #managergnb {
+  display: block;
+  text-align: center;
+}
+
+#manageBody #managergnb .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#manageBody #managergnb .list > li {
+  padding: 20px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+#manageBody #managergnb .list > li > a {
+  color: #111;
+}
+
+#manageBody #managergnb #admin {
+  top: 150px;
+  position: absolute;
+  right: 20px;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  background-color: #4f4f4f;
+  color: #fff;
+}
+
+#manageBody #managergnb #admin:hover {
+  color: #4f4f4f;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+#allQnaList {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+#allQnaList > div {
+  width: 800px;
+  height: 400px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+
+#allQnaList > div > a {
+  line-height: 400px;
+}
+
+#footer {
+  padding-top: 250px;
+  text-align: center;
+  font-size: 13px;
+  padding-bottom: 30px;
+}
+
+#footer .container div {
+  margin: 0 !important;
+}
+
+#footer .social {
+  padding: 20px 0;
+}
+
+#footer .social div {
+  display: inline;
+  padding: 0px 12px;
+}
+
+#footer .social div a {
+  font-size: 23px;
+}
+
+#footer .social div a img {
+  width: 21x;
+  height: 20px;
+}
+
+#footer .social div a svg {
+  width: 21px;
+  height: 20px;
+}
+
+#footer .social div a i {
+  width: 21px;
+  height: 20px;
+}
+
+#footer strong {
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+#footer p {
+  padding-bottom: 10px;
+}
+
+#footer .link a {
+  font-size: 12px;
+  padding: 3px 7.5px;
+}
+
+.formBox {
+  display: block;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formBox h2 {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.formBox .userInfo {
+  width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.formBox .profileImgBox .profileImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.formBox .userList .profileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.formBox .userList td {
+  font-size: 12px;
+}
+
+.formBox thead {
+  border-bottom: 1px solid #ccc;
+  height: 30px;
+  line-height: 30px;
+}
+
+.formBox tr {
+  line-height: 30px;
+}
+
+.formBox .pagination {
+  padding-top: 20px;
+}
+
+#review {
+  padding-top: 80px;
+  font-size: 12spx;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+#review h2 {
+  padding-bottom: 20px;
+}
+
+#review p {
+  color: rgba(79, 79, 79, 0.7);
+  margin-bottom: 20px;
+}
+
+#review .reviewBtn {
+  margin-bottom: 24px;
+}
+
+#review .reviewBtn .writeBtn {
+  background-color: #ffffff;
+  color: #4f4f4f;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+}
+
+#review .reviewWrap {
+  text-align: center;
+}
+
+#review .reviewWrap th {
+  padding: 10px 0;
+}
+
+#review .reviewWrap .qnaList {
+  border-top: 1px solid rgba(79, 79, 79, 0.7);
+  border-bottom: 1px solid rgba(79, 79, 79, 0.7);
+}
+
+#review .reviewWrap .qnaList td {
+  font-size: 13px;
+  padding: 10px 0;
+}
+
+#review .reviewWrap .qnaList #subject {
+  text-align: left;
+}
+
+#qna {
+  padding-top: 80px;
+  font-size: 12spx;
+}
+
+#qna h2 {
+  padding-bottom: 15px;
+  font-weight: 700;
+}
+
+#qna p {
+  color: rgba(79, 79, 79, 0.7);
+  margin-bottom: 20px;
+}
+
+#qna .qnaBtn {
+  margin-bottom: 24px;
+}
+
+#qna .qnaBtn > p {
+  font-size: 13px;
+  margin-bottom: 8px !important;
+}
+
+#qna .qnaBtn input {
+  background-color: #ffffff;
+  color: #4f4f4f;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  border-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+#qna .qnaWrap {
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #4f4f4f;
+  text-align: center;
+}
+
+#qna .qnaWrap th {
+  padding: 10px 0;
+}
+
+#qna .qnaWrap .qnaList {
+  border-top: 1px solid rgba(79, 79, 79, 0.7);
+  border-bottom: 1px solid rgba(79, 79, 79, 0.7);
+}
+
+#qna .qnaWrap .qnaList tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+#qna .qnaWrap .qnaList td {
+  font-size: 13px;
+  padding: 10px 0;
+}
+
+#qna .qnaWrap .qnaList #subject {
+  text-align: left;
+  cursor: pointer;
+}
+
+#productList .productWrap {
+  text-align: center;
+}
+
+#productList .productWrap li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#productList .productWrap li .productImg {
+  width: 300px;
+  height: 450px;
+}
+
+#productInfo li {
+  display: inline-block;
+}
+
+#productInfo li .productImg {
+  width: 600px;
+  height: 900px;
+}
+
+#myModal #modalForm {
+  position: relative;
+}
+
+#myModal #modalForm .top {
+  margin: auto 0;
+  padding: 24px;
+  height: 36px;
+  position: relative;
+}
+
+#myModal #modalForm .top #infoProfileImg {
+  position: absolute;
+  top: 24px;
+  display: inline-block;
+  width: 46px;
+}
+
+#myModal #modalForm .top #infoProfileImg .infoProfileImg {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+#myModal #modalForm .top #topTxt {
+  position: absolute;
+  display: inline-block;
+  left: 70px;
+}
+
+#myModal #modalForm .top #topTxt #infoSubject {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#myModal #modalForm .top #topTxt > div {
+  display: inline-block;
+}
+
+#myModal #modalForm .top #topTxt #topSub {
+  font-size: 13px;
+  color: #757575;
+}
+
+#myModal #modalForm .contents {
+  padding: 24px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#myModal #modalForm .contents #contents {
+  margin: 0;
+}
+
+#myModal #modalForm .contents > p {
+  margin: 20px 0 40px;
+}
+
+#myModal #modalForm .replyList {
+  font-size: 13px;
+  line-height: 13px;
+}
+
+#myModal #modalForm .replyList .btnDelete {
+  font-size: 13px;
+}
+
+#myModal #modalForm #replyForm {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 170px;
+  position: relative;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 3px;
+}
+
+#myModal #modalForm #replyForm .textAreaBox {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 800px;
+  min-height: 62px;
+  padding: 16px;
+}
+
+#myModal #modalForm #replyForm .textAreaBox > textarea {
+  padding: 0;
+  width: calc(100% - 24px);
+  border: none;
+  outline: none;
+  height: calc(170px - 80px);
+}
+
+#myModal #modalForm #replyForm .textAreaBox .btnReply {
+  cursor: pointer;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  padding: 6px 20px;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
+  font-size: 12px;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+
+#myModal #modalForm #editDelete {
+  text-align: right;
+  margin-top: 10px;
+}
+
+#myModal #modalForm #editDelete a {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+#myModal #modalForm .closeModal {
+  position: absolute;
+  font-size: 13px;
+  top: 20px;
+  right: 20px;
+}
+
+#myPage {
+  background-color: #f5f6f7;
+}
+
+#myPage .myPage {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#myPage .myPage .myBox .boxMargin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#myPage .myPage .myBox .myPageList {
+  width: 16.66666667%;
+  text-align: left;
+  margin: 0;
+}
+
+#myPage .myPage .myBox .myPageList ul {
+  margin-top: 100px;
+}
+
+#myPage .myPage .myBox .myPageList ul li {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+#myPage .myPage .myBox .myPageList ul li a {
+  padding-bottom: 5px;
+}
+
+#myPage .myPage .myBox .myPageList ul li.on a {
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+#myPage .myPage .myBox #rightbody {
+  width: 83.33333333%;
+}
+
+#myPage .myPage .myBox #rightbody .subbody {
+  width: 90%;
+  padding: 50px 0 50px 45px;
+  margin-bottom: 70px;
+  background: #fff;
+  margin-top: 100px;
+  display: table;
+}
+
+#myPage .myPage .myBox #rightbody .subbody .fullbody {
+  width: 100% !important;
+}
+
+#myPage .myPage .myBox #rightbody .subbody img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+#myPage .myPage .myBox #rightbody .leftSub {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#myPage .myPage .myBox #rightbody .leftContents {
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: 50px;
+  width: 40%;
+}
+
+#myPage .myPage .myBox #rightbody .leftContents span {
+  font-size: 22px;
+}
+
+#myPage .myPage .myBox #rightbody .leftContents p {
+  font-size: 15px;
+}
+
+#myPage .myPage .myBox #rightbody .rightSub {
+  width: 25%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#myPage .myPage .myBox #rightbody .rightSub a {
+  margin-bottom: 5px;
+}
+
+#myPage .myPage .myBox #rightbody .rightSub p {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+#myPage .myPage .myBox .rightTxt {
+  min-height: 300px;
+}
+
+#myPage .myPage .myBox .rightTxt .null {
+  padding: 70px 0;
+  color: rgba(33, 33, 33, 0.4);
+  text-align: center;
+}
+
+#myPage .myPage .myBox .rightTxt #wishCountBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#myPage .myPage .myBox .rightTxt #wishCountBox #wishCount {
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #4f4f4f;
+  color: #fff;
+  border-radius: 100px;
+  text-align: center;
+}
+
+#myPage .myPage .myBox .rightTxt #imgBox {
+  position: relative;
+  width: 240px;
+}
+
+#myPage .myPage .myBox .rightTxt #imgBox > p {
+  color: rgba(33, 33, 33, 0.4);
+  font-size: 15px;
+  padding: 70px 0 150px;
+  text-align: center;
+  font-size: 14px;
+}
+
+#myPage .myPage .myBox .rightTxt #imgBox #imgHover #icons {
+  position: absolute;
+  border-radius: 100%;
+  color: #fff;
+  z-index: 9999;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+#myPage .myPage .myBox .rightTxt #imgBox #imgHover:hover #icons {
+  opacity: 1;
+}
+
+#myPage .myPage .myBox .rightTxt #imgBox #imgHover:hover img {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+#myPage .myPage .myBox .rightTxt #imgBox #imgHover img {
+  width: 240px;
+  height: 240px;
+}
+
+#myPage .qnaBox {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#myPage .qnaBox .empty {
+  width: 16.666666%;
+}
+
+#myPage .qnaBox .qna span {
+  padding-bottom: 20px;
+}
+
+#myPage .qnaBox .qna .qnaBoardTitle {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  margin-right: 65px;
+}
+
+#myPage .qnaBox .qna #qnaCount {
+  display: inline-block;
+  margin-left: 5px;
+  width: 20px;
+  height: 0px;
+  background-color: #4f4f4f;
+  color: #fff;
+  border-radius: 100px;
+  text-align: center;
+}
+
+#myPage .qnaBox .qna p {
+  padding-bottom: 20px;
+}
+
+#myPage .qnaBox .qnaWrap {
+  margin-bottom: 100px;
+  position: relative;
+  font-size: 14px;
+}
+
+#myPage .qnaBox .qnaWrap table {
+  margin-bottom: 15px;
+}
+
+#myPage .qnaBox .qnaWrap table thead {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 0.5px solid #ccc;
+}
+
+#myPage .qnaBox .qnaWrap table tbody {
+  padding-top: 10px;
+}
+
+#myPage .qnaBox .qnaWrap table tbody tr {
+  height: 30px;
+  margin-bottom: 5px;
+  line-height: 30px;
+}
+
+#myPage .qnaBox .qnaWrap table tbody tr td {
+  text-align: center;
+}
+
+#myPage .qnaBox .qnaWrap table tbody tr .subject {
+  text-align: left;
+  padding-left: 50px;
+}
+
+#myPage .qnaBox .qnaWrap .empty {
+  height: 50px;
+}
+
+#myPage .qnaBox .qnaWrap .qnaWrite {
+  position: absolute;
+  right: 66px;
+}
+
+#myPage .qnaBox .qnaWrap .qnaWrite a {
+  font-size: 12px;
+  padding: 6px 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #efefef;
+}
+
+#myPage .qnaBox .qnaWrap .qnaWrite a:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+.productQnaList td {
+  font-size: 14px;
+}
+
+.note-editable > p > img {
+  width: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#mainAdmin {
+  min-height: 200px;
+  text-align: center;
+  padding-top: 70px;
+}
+
+#mainAdmin p {
+  font-size: 43px;
+  padding: 15px;
+}
+
+#paymentNoListBox {
+  text-align: left;
+}
+
+.qnaInfo .replyList {
+  font-size: 14px;
+}
+
+.qnaInfo .replyList li {
+  line-height: 23px;
+}
+
+.qnaInfo .replyList .btnReplyDelete {
+  font-size: 12px;
+}
+
+#bg {
+  background-color: #efefef;
+}
+
+#unuser_paymentInfo {
+  display: block;
+  line-height: 1.5;
+  color: #212121;
+  font-size: 14px;
+  min-height: 890px;
+  padding-top: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#unuser_paymentInfo .unuser_title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+#unuser_paymentInfo #underLine {
+  border-bottom: 1px solid #2121;
+  margin: 15px 0 30px;
+}
+
+#unuser_paymentInfo h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3px;
+}
+
+#unuser_paymentInfo h2 .arrowBack {
+  width: 18px;
+  height: 18px;
+}
+
+#unuser_paymentInfo h2 .paymentNoTitle {
+  margin-left: 18px;
+  font-size: 18px;
+}
+
+#unuser_paymentInfo h2 .paymentNoText {
+  margin-left: 10px;
+  color: #4f4f4f;
+  font-size: 18px;
+}
+
+#unuser_paymentInfo h3 {
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 30px;
+}
+
+#unuser_paymentInfo li > p {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+#unuser_paymentInfo li > span {
+  font-size: 14px;
+  color: #212121;
+  margin-bottom: 10px;
+}
+
+#unuser_paymentInfo li .allPrice {
+  font-size: 16px;
+  font-weight: 700;
+  color: #474747;
+}
+
+#unuser_paymentInfo #paymentInfoL {
+  float: left;
+  width: 45%;
+}
+
+#unuser_paymentInfo #paymentInfoL #paymentInfoL1 {
+  padding: 30px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+#unuser_paymentInfo #paymentInfoL #paymentInfoL2 {
+  padding: 30px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+#unuser_paymentInfo #paymentInfoR {
+  float: right;
+  width: 45%;
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+#unuser_paymentInfo #paymentInfoR > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#unuser_paymentInfo #paymentInfoR #imgBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 74px;
+  margin-bottom: 15px;
+}
+
+#unuser_paymentInfo #paymentInfoR #imgBox #pdtImg {
+  width: 58px;
+  height: 58px;
+}
+
+#unuser_paymentInfo #paymentInfoR #imgBox #imgTextBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 10px;
+  font-size: 13px;
+  color: #757575;
+}
+
+#unuser_paymentInfo #paymentInfoR #imgBox #imgTextBox .pdtName {
+  font-size: 14px;
+  color: #212121;
+  font-weight: 700;
+}

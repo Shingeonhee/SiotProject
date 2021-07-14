@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="com/siot/mybatis/db.properties" />
+	<typeAliases>
+		<typeAlias type="com.siot.model.UserBean" alias="UserBean"   />
+		<typeAlias type="com.siot.model.ReviewBean" alias="ReviewBean"   />
+		<typeAlias type="com.siot.model.QnaBean" alias="QnaBean"   />
+		<typeAlias type="com.siot.model.QnaReplyBean" alias="QnaReplyBean"   />
+		<typeAlias type="com.siot.model.ProductBean" alias="ProductBean"   />
+		<typeAlias type="com.siot.model.ProductQnaBean" alias="ProductQnaBean"   />
+		<typeAlias type="com.siot.model.PdtQnaReplyBean" alias="PdtQnaReplyBean"   />
+		<typeAlias type="com.siot.model.PdtWishBean" alias="PdtWishBean"   />
+		<typeAlias type="com.siot.model.ShopCartBean" alias="ShopCartBean"   />
+		<typeAlias type="com.siot.model.ProductBean" alias="ProductBean"   />
+		<typeAlias type="com.siot.model.WishBean" alias="WishBean"   />
+		<typeAlias type="com.siot.model.PaymentBean" alias="PaymentBean"   />
+		<typeAlias type="com.siot.model.PaymentDetailBean" alias="PaymentDetailBean"   />
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/siot/mybatis/SiotMapper.xml" />
+	</mappers>
+</configuration>

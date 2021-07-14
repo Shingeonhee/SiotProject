@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mee.mybatis.SiotMapper">
+
+	<!-- product -->
+	<insert parameterType="productBean" id="insertProduct">
+		<selectKey order="BEFORE" resultType="Integer"
+			keyProperty="no">
+			SELECT PRODUCT_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO product VALUES
+		(#{no},
+		#{mainimg},
+		#{name},
+		#{price},
+		#{contents},
+		#{d_contents},
+		#{category},
+		#{productcolor},
+		#{productsize})
+	</insert>
+
+	<select id="getWeddingList" resultType="ProductBean">
+		SELECT * FROM PRODUCT
+		WHERE CATEGORY = 'Wedding'
+	</select>
+
+	<select id="getDailyList" resultType="ProductBean">
+		SELECT * FROM PRODUCT WHERE
+		CATEGORY = 'Daily'
+	</select>
+
+	<select id="getUniqueList" resultType="ProductBean">
+		SELECT * FROM PRODUCT
+		WHERE CATEGORY = 'Unique'
+	</select>
+
+	<select id="getGoodbyeitemList" resultType="ProductBean">
+		SELECT * FROM PRODUCT
+		WHERE CATEGORY = 'Goodbyeitem'
+	</select>
+
+	<select id="allProductList" resultType="ProductBean">
+		SELECT * FROM PRODUCT
+	</select>
+
+	<select id="productInfo" parameterType="Integer"
+		resultType="ProductBean">
+		SELECT * FROM PRODUCT WHERE NO = #{no}
+	</select>
+	<delete id="productDelete" parameterType="Integer">
+		DELETE FROM PRODUCT
+		WHERE NO = #{no}
+	</delete>
+
+	<update id="productUpdate" parameterType="ProductBean">
+		UPDATE PRODUCT SET
+		MAINIMG=#{mainimg},
+		NAME=#{name},
+		PRICE=#{price},
+		CONTENTS=#{contents},
+		D_CONTENTS=#{d_contents},
+		CATEGORY=#{category},
+		PRORDUCTCOLOR=#{productcolor},
+		PRODUCTSIZE=#{productsize}
+		WHERE NO = #{no}
+	</update>
+	<select id="productName" parameterType="Integer"
+		resultType="String">SELECT NAME FROM PRODUCT WHERE NO = #{no} </select>
+
+
+	<!-- qna -->
+	<insert id="insertQna" parameterType="QnaBean">
+		<selectKey keyProperty="no" resultType="Integer"
+			order="BEFORE">
+			SELECT QNA_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO QNA VALUES
+		(#{no},#{name},#{userNo},#{subject},#{contents},#{profileImg},SYSDATE)
+	</insert>
+	<update id="updateQna" parameterType="QnaBean">
+			UPDATE QNA SET SUBJECT=#{subject},CONTENTS=#{contents} WHERE NO = #{no}
+	</update>
+	<delete id="deleteQna" parameterType="Integer">
+		DELETE FROM QNA WHERE NO = #{no} 
+	</delete>
+
+
+	<!-- 관리자가보는 전체 qna -->
+	<select id="showAllQna" resultType="QnaBean">
+		SELECT * FROM QNA ORDER BY NO
+		DESC
+	</select>
+	<select id="qnaInfo" parameterType="Integer"
+		resultType="QnaBean">
+		SELECT * FROM QNA WHERE NO = #{no}
+	</select>
+	<select id="getQnaTotal" resultType="Integer">
+		SELECT COUNT(*) AS TOTAL
+		FROM QNA
+	</select>
+	<select id="qnaNo" resultType="Integer">
+		SELECT NO FROM QNA
+	</select>
+	
+	<!-- userQna -->
+	<select id="userQnaList" resultType="QnaBean" parameterType="Integer">
+	SELECT * FROM QNA WHERE USERNO=#{no} ORDER BY NO DESC
+	</select>
+
+	<!-- productQna -->
+	<insert id="insertProductQna" parameterType="ProductQnaBean">
+		<selectKey keyProperty="no" resultType="Integer"
+			order="BEFORE">
+			SELECT PRODUCTQNA_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO PRODUCTQNA VALUES
+		(#{no},#{productName},#{userNo},#{subject},#{name},SYSDATE,#{contents},#{productNo},#{userPassword})
+	</insert>
+
+	<select id="productQnaInfo" parameterType="Integer"
+		resultType="ProductQnaBean">
+		SELECT * FROM PRODUCTQNA WHERE NO = #{no}
+	</select>
+	<select id="pdtReplyCheck" resultType="Integer" parameterType="Integer">
+		SELECT COUNT(*) AS
+		 FROM PDTQNAREPLY WHERE QNANO = #{qnaNo}
+	</select>
+
+	<select id="qnaReplyCheck" resultType="Integer" parameterType="Integer">
+		SELECT COUNT(*) AS
+		 FROM QNAREPLY WHERE QNANO = #{qnaNo}
+	</select>
+	<!-- 관리자가보는 모든 상품qna //관리자페이지 -->
+	<select id="showProductQnaList" resultType="ProductQnaBean">
+		SELECT * FROM
+		PRODUCTQNA ORDER BY NO DESC
+	</select>
+	<select id="getProductQnaTotal" resultType="Integer">
+		SELECT COUNT(*) AS
+		TOTAL FROM PRODUCTQNA
+	</select>
+	<select id="pdtQnaNo" resultType="Integer">
+		SELECT NO FROM PRODUCTQNA
+	</select>
+
+
+
+	<!--회원가입&로그인 -->
+	<insert id="insertUser" parameterType="UserBean">
+		INSERT INTO JOINUSER
+		VALUES (JOINUSER_SEQ.NEXTVAL,
+		#{id},
+		#{password},
+		#{name},
+		#{gender},
+		#{phone},
+		#{postCode},
+		#{address},
+		#{subAddress},
+		#{ageYear},
+		#{ageMonth},
+		#{ageDay},
+		#{profileImg},
+		2
+		)
+	</insert>
+
+	<update id="updateUser" parameterType="UserBean">
+		UPDATE JOINUSER SET NAME =
+		#{name},
+		GENDER = #{gender},
+		PHONE = #{phone},
+		POSTCODE = #{postCode},
+		ADDRESS = #{address},
+		SUBADDRESS = #{subAddress},
+		AGEYEAR = #{ageYear},
+		AGEMONTH = #{ageMonth},
+		AGEDAY = #{ageDay}
+		WHERE NO = #{no}
+	</update>
+
+
+	<delete id="deleteUser" parameterType="Integer">
+		DELETE FROM JOINUSER WHERE
+		NO = #{no}
+	</delete>
+
+
+	<select id="getLoginUser" parameterType="UserBean"
+		resultType="UserBean">
+		SELECT * FROM JOINUSER WHERE ID = #{id} AND PASSWORD =
+		#{password}
+	</select>
+
+
+	<select id="getSelectOneUser" resultType="UserBean"
+		parameterType="Integer">
+		SELECT * FROM JOINUSER WHERE NO = #{no}
+	</select>
+
+
+	<select id="getPasswordUser" resultType="String"
+		parameterType="Integer">
+		SELECT PASSWORD FROM JOINUSER WHERE NO = #{no}
+	</select>
+
+	<select id="userPasswordCheck" parameterType="String"
+		resultType="Integer">
+		SELECT COUNT(*) FROM JOINUSER WHERE PASSWORD = #{password}
+	</select>
+
+	<select id="userIdCheck" parameterType="String"
+		resultType="Integer">
+		SELECT COUNT(*) FROM JOINUSER WHERE ID = #{id}
+	</select>
+
+
+
+	<select id="showAllUser" resultType="UserBean">
+		SELECT * FROM JOINUSER ORDER
+		BY NO DESC
+	</select>
+	<select id="userInfo" parameterType="Integer"
+		resultType="UserBean">
+		SELECT * FROM JOINUSER WHERE NO = #{no}
+	</select>
+	<select id="getUserTotal" resultType="Integer">
+		SELECT COUNT(*) AS TOTAL
+		FROM JOINUSER
+	</select>
+	<select id="getProfileImg"  parameterType="Integer" resultType="String">
+		SELECT PROFILEIMG FROM JOINUSER WHERE NO =#{no}
+	</select>
+
+
+	<!-- Wish -->
+
+	<insert id="insertWish" parameterType="Integer">
+		INSERT INTO WISH VALUES (WISH_SEQ.NEXTVAL,
+								#{idNo},
+								#{pdtNo}
+								)
+	</insert>
+	
+	<select id="getPdtNoList" resultType="WishBean" parameterType="Integer">
+      SELECT * FROM WISH WHERE IDNO = #{idNo} 
+   </select>
+   
+   <select id="getOneProduct" resultType="ProductBean" parameterType="Integer">
+      SELECT * FROM PRODUCT WHERE NO = #{pdtNo}
+   </select>
+
+	<delete id="deleteWish" parameterType="HashMap">
+		DELETE FROM WISH WHERE IDNO = #{idNo} AND PDTNO = #{pdtNo}
+	</delete>
+
+
+	<select id="getWish" resultType="Integer" parameterType="HashMap">
+		SELECT COUNT(*) TOTAL FROM WISH WHERE IDNO = #{idNo} AND PDTNO = #{pdtNo}
+	</select>
+	
+
+
+	<!-- Payment -->
+		<insert id="insertPayment" parameterType="PaymentBean">
+		INSERT INTO PAYMENT
+		VALUES(
+		#{paymentNo},
+		#{idNo},
+		#{name},
+		#{phone},
+		#{postCode},
+		#{address},
+		#{subAddress},
+		#{shippingMemo},
+		#{paymentPrice},
+		#{paymentMethod})
+	</insert>
+	<select id="showAllPayment" resultType="PaymentBean">
+		SELECT * FROM PAYMENT ORDER BY PAYMENTNO 
+	</select>
+	<select id="getPaymentTotal" resultType="Integer">
+		SELECT COUNT(*) AS TOTAL FROM PAYMENT
+	</select>
+	
+	<select id="getPaymentForId" resultType="PaymentBean" parameterType="Integer">
+		SELECT * FROM PAYMENT WHERE IDNO = #{idNo} ORDER BY PAYMENTNO
+	</select>
+	<select id="getPaymentForPaymentNo" resultType="PaymentBean" parameterType="String">
+		SELECT * FROM PAYMENT WHERE PAYMENTNO = #{paymentNo}
+	</select>
+	
+	<select id="getOneUserForIdNo" resultType="UserBean" parameterType="Integer">
+		SELECT * FROM JOINUSER WHERE NO = #{idNo}
+	</select>
+
+	<!-- Review //상품창 -->
+	<insert id="insertReview" parameterType="ReviewBean">
+		<selectKey keyProperty="no" resultType="Integer"
+			order="BEFORE">
+			SELECT REVIEW_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO REVIEW VALUES
+		(#{no},#{grade},#{productName},#{name},SYSDATE,#{contents},#{productNo},#{userNo},#{userPassword})
+	</insert>
+	<select id="showReviewList" parameterType="Integer"
+		resultType="ReviewBean">
+		SELECT * FROM REVIEW WHERE PRODUCTNO = #{productNo}
+		ORDER BY NO DESC
+	</select>
+	<select id="reviewTotal" resultType="Integer">
+		SELECT COUNT(*) AS TOTAL
+		FROM REVIEW WHERE PRODUCTNO = #{productNo}
+	</select>
+	<select id="getReviewPassword"  parameterType="Integer" resultType="String">
+		SELECT USERPASSWORD FROM REVIEW WHERE NO =#{no}
+	</select>
+	<delete id="deleteReview" parameterType="Integer">
+		DELETE FROM REVIEW WHERE NO =#{no}
+	</delete>
+	
+	<!-- Qna //상품창 -->
+	<select id="oneProductQnaList" parameterType="Integer"
+		resultType="ProductQnaBean">
+		SELECT * FROM PRODUCTQNA WHERE PRODUCTNO =
+		#{productNo} ORDER BY NO DESC
+	</select>
+	<select id="oneProductQnaTotal" resultType="Integer">
+		SELECT COUNT(*) AS
+		TOTAL FROM PRODUCTQNA WHERE PRODUCTNO = #{productNo}
+	</select>
+
+	<update id="updatePdtQna" parameterType="ProductQnaBean">
+			UPDATE PRODUCTQNA SET SUBJECT=#{subject},CONTENTS=#{contents} WHERE NO = #{no}
+	</update>
+	<delete id="deletePdtQna" parameterType="Integer">
+		DELETE FROM PRODUCTQNA WHERE NO =#{no}
+	</delete>
+	<select id="getPdtQnaPassword"  parameterType="Integer" resultType="String">
+		SELECT USERPASSWORD FROM PRODUCTQNA WHERE NO =#{no}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<!-- 댓글 -->
+			<!-- 1:1qna -->
+	<insert id="insertQnaReply" parameterType="QnaReplyBean">
+		<selectKey keyProperty="no" resultType="Integer"
+			order="BEFORE">
+			SELECT QNAREPLY_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO QNAREPLY VALUES
+		(#{no},#{name},SYSDATE,#{contents},#{qnaNo},#{userNo})
+	</insert>
+	<select id="qnaReplyList" resultType="QnaReplyBean" parameterType="Integer">
+		SELECT * FROM QNAREPLY WHERE QNANO= #{qnaNo}
+		ORDER BY NO DESC
+	</select>
+	<delete id="qnaReplyDelete" parameterType="Integer">
+		DELETE FROM QNAREPLY WHERE NO = #{no} 
+	</delete>
+	
+	
+	
+	
+			<!-- 상품qna reply -->
+	<insert id="insertPdtQnaReply" parameterType="PdtQnaReplyBean">
+		<selectKey keyProperty="no" resultType="Integer"
+			order="BEFORE">
+			SELECT PDTQNAREPLY_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO PDTQNAREPLY VALUES
+		(#{no},#{name},SYSDATE,#{contents},#{qnaNo},#{userNo},#{userPassword})
+	</insert>
+	<select id="pdtQnaReplyList" resultType="PdtQnaReplyBean" parameterType="Integer">
+		SELECT * FROM PDTQNAREPLY WHERE QNANO= #{qnaNo}
+		ORDER BY NO DESC
+	</select>
+	<delete id="pdtQnaReplyDelete" parameterType="Integer">
+		DELETE FROM PDTQNAREPLY WHERE NO = #{no} 
+	</delete>
+	<select id="getPdtReplyPassword"  parameterType="Integer" resultType="String">
+		SELECT USERPASSWORD FROM PDTQNAREPLY WHERE NO =#{no}
+	</select>
+
+
+	<!-- ShopCart -->
+	<select id="showAllShopCart" resultType="ShopCartBean"
+		parameterType="Integer">
+		SELECT * FROM SHOPCART WHERE IDNO = #{idNo}
+	</select>
+	<!-- SELECT * FROM ( -->
+	<!-- SELECT M.*, ROWNUM AS NUM FROM (SELECT * FROM -->
+	<!-- SHOPCART ORDER BY no DESC) M) -->
+
+	<select id="getSelectOneShopCart" resultType="ShopCartBean"
+		parameterType="Integer">
+		SELECT * FROM SHOPCART WHERE NO = #{no}
+	</select>
+
+	<delete id="deleteShopCart" parameterType="Integer">
+		DELETE FROM SHOPCART
+		WHERE NO = #{no}
+	</delete>
+
+	<delete id="paymentShopCartDelete" parameterType="HashMap">
+		DELETE FROM SHOPCART WHERE IDNO = #{idNo} AND PDTNO = #{pdtNo}
+	</delete>
+	<!-- <update id="updateShopCart" parameterType="ShopCartBean"> -->
+	<!-- UPDATE SHOPCART SET -->
+	<!-- PDTNAME = #{pdtName}, -->
+	<!-- PRICE = #{price}, -->
+	<!-- MAINIMG = #{mainImg}, -->
+	<!-- SELECTBOX = #{selectBox}, -->
+	<!-- WISHON = #{wishOn}, -->
+	<!-- ID = #{id} -->
+	<!-- WHERE no = #{no} -->
+	<!-- </update> -->
+
+
+
+	<!-- 전체 게시글 수 -->
+	<select id="getTotalShopCart" resultType="Integer"
+		parameterType="Integer">
+		SELECT COUNT(*) AS TOTAL FROM SHOPCART WHERE IDNO =
+		#{idNo}
+	</select>
+
+	<!-- 전체 가격 -->
+	<select id="allPriceShopCart" resultType="Integer"
+		parameterType="Integer">
+		SELECT SUM(PRICE*AMOUNT) AS TOTAL FROM SHOPCART WHERE IDNO =
+		#{idNo}
+	</select>
+
+	<!-- 배달 -->
+	<select id="delivery" resultType="Integer"
+		parameterType="Integer">
+		SELECT SELECTBOX FROM SHOPCART WHERE NO = #{no}
+	</select>
+	
+	<!-- Amount바꾸기 -->
+	<update id="changeAmount" parameterType="HashMap">
+		UPDATE SHOPCART SET AMOUNT = #{amount} WHERE NO = #{no}
+	</update>
+
+	<select id="geTotalPriceShopCart" parameterType="Integer"
+		resultType="ShopCartBean">
+		SELECT SUM(PRICE*AMOUNT) FROM SHOPCART WHERE IDNO = #{idNo}
+	</select>
+
+	<insert id="insertShopCart" parameterType="shopCartBean">
+		INSERT INTO SHOPCART
+		VALUES(
+		SHOPCART_SEQ.NEXTVAL,
+		#{idNo},
+		#{pdtNo},
+		#{pdtName},
+		#{price},
+		#{pdtSize},
+		#{pdtColor},
+		#{mainImg},
+		#{selectBox},
+		#{wishOn},
+		#{amount})
+	</insert>
+
+	<update id="SelectBoxChange" parameterType="HashMap">
+		UPDATE SHOPCART SET
+		SELECTBOX = #{selectBox} WHERE NO = #{no}
+	</update>
+
+	<select id="getSelectOneProduct" resultType="ProductBean"
+		parameterType="Integer">
+		SELECT * FROM PRODUCT WHERE NO=#{pdtNo}
+	</select>
+	
+	<select id="getSelectOneWish" resultType="Integer" parameterType="Integer">
+		SELECT WISHON FROM SHOPCART WHERE NO = #{no}
+	</select> 
+	
+	<update id="changeWish" parameterType="HashMap">
+		UPDATE SHOPCART SET
+		WISHON = #{wishOn} WHERE NO = #{no}
+	</update>
+	
+ <!-- DetailPayment -->
+   <insert id="insertPaymentDetail" parameterType="PaymentDetailBean">
+      INSERT INTO PAYMENTDETAIL
+      VALUES(
+      #{paymentNo},
+      #{pdtNo},
+      #{color},
+      #{pdtSize},
+      #{amount})
+   </insert>
+   
+   <select id="getPaymentDetailForPaymentNo" resultType="PaymentDetailBean" parameterType="String">
+		SELECT * FROM PAYMENTDETAIL WHERE PAYMENTNO = #{paymentNo}
+	</select>
+
+   
+
+</mapper>
