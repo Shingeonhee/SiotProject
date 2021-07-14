@@ -9,58 +9,8 @@
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-<script>
-	
-</script>
-
 </head>
-
-<body>
-
-	<!---------------------------
-
-  <div>
-      <div>
-	         <ul>
-	            <li><img src="${productBean.mainimg}"></li>
-	            <li><span>${productBean.name}</span></li>
-	            <li><span>${productBean.price}</span></li>
-	            <li><span>${productBean.contents}</span></li>
-	            <li><p>${productBean.d_contents}</p></li>
-	            <li><span>${productBean.category}</span></li>
-	         </ul>      
-      </div>
-   </div>
-  
-  
-  
-
-  
-<div>
-
-	<a href ="ProductDelete.do?no=${productBean.no}"  
-	
-	onclick="if(!confirm('삭제하시면 복구할수 없습니다. \n 정말로 삭제하시겠습니까??')){return false;}"> 삭제 </a>
-
-
-
-
-	<a href ="ProductUpdateForm.do?no=${productBean.no}"> 수정 </a>
-
-
-</div>  
-  
-  
- -------------------------------------------------------------------------------------------------->
-</body>
 <style>
-@import url("//vendor-cdn.imweb.me/css/chosun_ilbo_myungjo.css");
-
-@import url("//vendor-cdn.imweb.me/css/alegreya.css");
-
-@import url('//fonts.googleapis.com/earlyaccess/nanumgothic.css');
-
 #whole {
 	width: 100%;
 	height: 1000px;
@@ -86,6 +36,11 @@
 	width: 600px;
 	height: 750px;
 	margin-top: 20px;
+	position: relative;
+}
+#Mainpdtimg img{
+	object-fit: cover;
+	width:100%;
 }
 
 #rightside {
@@ -330,7 +285,7 @@
 							<p>1,780 구매감사적립금 적립예정</p>
 						</div>
 					</div>
-
+					
 					<div>
 						<div id="postprice1">
 							<!-- 택배비용 1 (title)-->
@@ -343,7 +298,46 @@
 						</div>
 					</div>
 				</div>
-
+				<div id="goodWrap">
+                     <div class="option_select">
+                        <a class="option_title subject">색상*</a>
+                        <div id="colorchoosewhynotworking">
+                           <div>
+                              <div style="display: flex;">
+                                 <c:forEach var="i"
+                                    items="${productBean.productcolor.split(',') }" begin="0"
+                                    end="3" step="1" varStatus="status">
+                                    <label style="display: flex;"> 
+                                    <input name="pdtColor" type="radio" value="${i}" id="pdtColor">
+                                       <span id="colorBox" style="background-color:${i};" class="colorBox"></span>
+                                    </label>
+                                 </c:forEach>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="option_select">
+                        <a id="productsizereal" style="margin-bottom: 1px;"
+                           class="option_title subject">사이즈*</a>
+                        <div>
+                           <select class="active" name="pdtSize" id="option_size">
+                              <c:forEach var="i"
+                                 items="${productBean.productsize.split(',') }" begin="0"
+                                 end="3" step="1" varStatus="status">
+                                 <option id="pdtSize">${i}</option>
+                              </c:forEach>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="option_select">
+                        <div class="option_title subject">수량</div>
+                        <div id="amountBox">
+                           <!-- 수량 -->
+                           <a id="minusBtn">-</a> <input type="text" name="amount"
+                              id="amount" value="1"> <a id="plusBtn">+</a>
+                        </div>
+                     </div>
+                  </div>
 				<div id="postmethodwhich">
 					<!-- 배송방법 -->
 					<select class="active" name="selectBox">

@@ -12,6 +12,10 @@
       font-size:32px;
       margin-bottom:50px;
    }
+   #pdtUpdate .col-sm-3 .col-sm-3-img{
+   	width:200px;
+   	
+   }
    #pdtUpdate .col-sm-2{
       display:block;
       margin-top:20px;
@@ -43,7 +47,8 @@
          <div class="form-group row">
             <label class="col-sm-2">대표이미지 </label>
             <div class="col-sm-3">
-               <input type="file" name="multipartFile" id="file" value="${productBean.mainimg}">
+<%--                <input type="file" name="multipartFile" id="file" value="${productBean.mainimg}"> --%>
+               <img class="col-sm-3-img" src="${productBean.mainimg}">
             </div>
          </div>
    
@@ -90,7 +95,7 @@
          <div class="form-group row">
             <label class="col-sm-2">상품 색상을 선택해주세요.</label>
             <div class="col-sm-3" id="productrealcolor">
-               <label><input type="checkbox" name="productcolor" value="red">빨강</label>
+            <label><input type="checkbox" name="productcolor" value="red">빨강</label>
             <label><input type="checkbox" name="productcolor" value="orange">주황</label>
             <label><input type="checkbox" name="productcolor" value="yellow">노랑</label>
             <label><input type="checkbox" name="productcolor" value="green">초록</label>
@@ -165,4 +170,7 @@
          });
       }
    });
+   
+   let pdtSize = "${productBean.productsize }";
+   let pdtColor = "${productBean.productcolor }"
 </script>

@@ -61,7 +61,7 @@
 		CONTENTS=#{contents},
 		D_CONTENTS=#{d_contents},
 		CATEGORY=#{category},
-		PRORDUCTCOLOR=#{productcolor},
+		PRODUCTCOLOR=#{productcolor},
 		PRODUCTSIZE=#{productsize}
 		WHERE NO = #{no}
 	</update>
