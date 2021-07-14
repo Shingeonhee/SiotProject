@@ -47,9 +47,9 @@
          <div class="form-group row">
             <label class="col-sm-2">대표이미지 </label>
             <div class="col-sm-3">
-<%--                <input type="file" name="multipartFile" id="file" value="${productBean.mainimg}"> --%>
-               <img class="col-sm-3-img" src="${productBean.mainimg}">
-            </div>
+<%--                <img class="col-sm-3-img" src="${productBean.mainimg}"> --%>
+				<input type="file" name="multipartpdtFile" id="file" value="${productBean.mainimg}">
+			</div>
          </div>
    
          <div class="form-group row">

@@ -221,8 +221,25 @@ public class ProductController {
 	}
 
 	@PostMapping("/ProductUpdate.do")
-	public String productUpdate(ProductBean productBean, HttpServletResponse response) throws IOException {
-
+	public String productUpdate(ProductBean productBean, HttpServletResponse response,HttpServletRequest request, MultipartFile multipartpdtFile, HttpSession session) throws IOException {
+		String context = request.getContextPath();// 현재 실행중인  context
+		String fileRoot = "C:\\miniproject_image\\";
+		String originalFileName = multipartpdtFile.getOriginalFilename();
+		String extention = FilenameUtils.getExtension(originalFileName); //파일의 확장자 구하기...
+		String savedFileName = UUID.randomUUID()+"."+extention; 
+		logger.info("savedFileName{}",savedFileName);
+		File targetFile = new File(fileRoot+savedFileName); //java.io임포트
+		String dbSavedFile = context+"/miniProject/"+savedFileName;
+		logger.info("dbSavedFile{}",dbSavedFile);
+		
+		try {
+			InputStream fileStream = multipartpdtFile.getInputStream();
+			FileUtils.copyInputStreamToFile(fileStream, targetFile);  //C:\\miniproject_image\\에 저장하기
+		} catch (IOException e) {
+			FileUtils.deleteQuietly(targetFile);
+			e.printStackTrace();
+		}
+		productBean.setMainimg(dbSavedFile);
 		int result = productDao.productUpdate(productBean);
 		if (result > 0) {
 			ScriptWriterUtil.alertAndNext(response, "상품수정.", "ProductList.do");
